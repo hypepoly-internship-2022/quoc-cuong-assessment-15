@@ -37,7 +37,7 @@ public class CleanET : MonoBehaviour
 
     private void randomWaterForce(Rigidbody body)
     {
-        int ran = Random.Range(30, 40);
-        body.AddForce(0, ran * 3.5f, -ran * 1.5f);
+        int ran = Random.Range(50, 60);
+        body.AddForce(0, ran * 3.5f, -ran);
     }
 }
