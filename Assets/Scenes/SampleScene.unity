@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 643705853}
   - component: {fileID: 643705852}
   - component: {fileID: 643705855}
+  - component: {fileID: 643705856}
   m_Layer: 0
   m_Name: Spray
   m_TagString: Untagged
@@ -713,7 +714,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+      maxColor: {r: 0.18458526, g: 0.33625928, b: 0.8018868, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1091,7 +1092,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 1
-    maxNumParticles: 17740
+    maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 1
     rotation3D: 0
@@ -4102,9 +4103,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -4279,7 +4280,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -5258,6 +5259,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deodorant: {fileID: 921845873}
+--- !u!114 &643705856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643705851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf2657396d255149a579df668e6bf02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &687917402
 PrefabInstance:
   m_ObjectHideFlags: 0

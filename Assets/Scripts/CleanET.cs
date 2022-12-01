@@ -5,33 +5,16 @@ using UnityEngine;
 public class CleanET : MonoBehaviour
 {
 
-    private Camera mainCamera;
     private Rigidbody body;
 
-    private void Awake() 
+    private void OnParticleCollision(GameObject other)
     {
-        mainCamera = Camera.main;    
-    }
-
-    private void FixedUpdate() 
-    {
-        blowAwayDirt(); 
-    }
-
-    private void blowAwayDirt()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit))
+        if(other.tag == "Dirty")
         {
-            if(hit.collider.gameObject.CompareTag("Dirty"))
-            {
-                body = hit.collider.GetComponent<Rigidbody>();
-                randomWaterForce(body);
-                body.useGravity = true;
-                hit.collider.tag = "Clean";
-            }
+            body = other.GetComponent<Rigidbody>();
+            randomWaterForce(body);
+            body.useGravity = true;
+            other.tag = "Clean";
         }
     }
 
