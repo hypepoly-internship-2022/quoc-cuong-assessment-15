@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class CleanET : MonoBehaviour
 {
+    [SerializeField] private GameObject done;
 
     private Rigidbody body;
+    private int dirty;
+
+    private void Start()
+    {
+        dirty = 6;
+    }
+
+    private void Update()
+    {
+        if(dirty == 0) 
+        {
+            done.SetActive(true);
+            gameObject.SetActive(false);
+        }
+    }
 
     private void OnParticleCollision(GameObject other)
     {
         if(other.tag == "Dirty")
         {
+            dirty--;
             body = other.GetComponent<Rigidbody>();
             randomWaterForce(body);
             body.useGravity = true;
